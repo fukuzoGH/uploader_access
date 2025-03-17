@@ -3,47 +3,47 @@ Option Compare Database
 
 Public Function category_name(category_id As Integer) As String
 '
-' ŒŸõ•¶š—ñ—p‚Éo—Í‚·‚é•K—v‚ ‚è
+' æ¤œç´¢æ–‡å­—åˆ—ç”¨ã«å‡ºåŠ›ã™ã‚‹å¿…è¦ã‚ã‚Š
 '
 
 '
-' parent_id_above : ‘æ“ñŠK‘w‚Ìid /‘æˆêŠK‘w‚Ìid ‚ğ•Ô‚·
+' parent_id_above : ç¬¬äºŒéšå±¤ã®id /ç¬¬ä¸€éšå±¤ã®id ã‚’è¿”ã™
 '
 
 '
-' ?fnc_category.category_name(22)    :Šò•Œs;2023”N“x;A
-' ?fnc_category.category_name(20)    :2025”N“x;A
-' ?fnc_category.category_name(17)    :‚»‚Ì‘¼
-' ?fnc_category.category_name(21)    :2024”N“x;B;
+' ?fnc_category.category_name(22)    :å²é˜œå¸‚;2023å¹´åº¦;A
+' ?fnc_category.category_name(20)    :2025å¹´åº¦;A
+' ?fnc_category.category_name(17)    :ãã®ä»–
+' ?fnc_category.category_name(21)    :2024å¹´åº¦;B;
 '
-'eŠK‘w
+'è¦ªéšå±¤
     Dim parent_id As Integer
     parent_id = DLookup("parent_id", "category", "category_id=" & category_id)
 '
     Dim ret As String
     ret = ""
 '
-'‘æ“ñŠK‘w‚Ìid
+'ç¬¬äºŒéšå±¤ã®id
     Dim parent_id_above As Integer
     parent_id_previous = 0
     
-    '‘æOŠK‘w‚Ü‚Å‚µ‚©‚È‚¢
+    'ç¬¬ä¸‰éšå±¤ã¾ã§ã—ã‹ãªã„
     Select Case DLookup("category", "category", "category_id=" & category_id)
     Case 1
-        '•\¦‚·‚é•¶š—ñ
+        'è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
         ret = DLookup("categoryname", "category", "category_id=" & category_id) & ";"
     Case 2
-        '‘æ“ñŠK‘w‚Ìid Šm’è
+        'ç¬¬äºŒéšå±¤ã®id ç¢ºå®š
         parent_id_above = parent_id
         
-        '•\¦‚·‚é•¶š—ñ
+        'è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
         ret = DLookup("categoryname", "category", "category_id=" & category_id) & ";"
         ret = ret & DLookup("categoryname", "category", "category_id=" & parent_id) & ";"
     Case 3
-        '‘æˆêŠK‘w‚Ìid Šm’è
+        'ç¬¬ä¸€éšå±¤ã®id ç¢ºå®š
         parent_id_above = DLookup("parent_id", "category", "category_id=" & parent_id)
         
-        '•\¦‚·‚é•¶š—ñ
+        'è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
         ret = DLookup("categoryname", "category", "category_id=" & category_id) & ";"
         ret = ret & DLookup("categoryname", "category", "category_id=" & parent_id) & ";"
         ret = ret & DLookup("categoryname", "category", "category_id=" & parent_id_above) & ";"
@@ -64,34 +64,34 @@ Public Function category_id_str(category_id As Integer) As String
 ' ?fnc_category.category_id_str(17)    :17;
 ' ?fnc_category.category_id_str(21)    :21;16;
 '
-    'eŠK‘w
+    'è¦ªéšå±¤
     Dim parent_id As Integer
     parent_id = DLookup("parent_id", "category", "category_id=" & category_id)
 '
     Dim ret As String
     ret = ""
 '
-'‘æ“ñŠK‘w‚Ìid
+'ç¬¬äºŒéšå±¤ã®id
     Dim parent_id_above As Integer
     parent_id_previous = 0
     
-    '‘æOŠK‘w‚Ü‚Å‚µ‚©‚È‚¢
+    'ç¬¬ä¸‰éšå±¤ã¾ã§ã—ã‹ãªã„
     Select Case DLookup("category", "category", "category_id=" & category_id)
     Case 1
-        '•\¦‚·‚é•¶š—ñ
+        'è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
         ret = CStr(category_id) & ";"
     Case 2
-        '‘æ“ñŠK‘w‚Ìid Šm’è
+        'ç¬¬äºŒéšå±¤ã®id ç¢ºå®š
         parent_id_above = parent_id
         
-        '•\¦‚·‚é•¶š—ñ
+        'è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
         ret = CStr(category_id) & ";"
         ret = ret & CStr(parent_id_above) & ";"
     Case 3
-        '‘æˆêŠK‘w‚Ìid Šm’è
+        'ç¬¬ä¸€éšå±¤ã®id ç¢ºå®š
         parent_id_above = DLookup("parent_id", "category", "category_id=" & parent_id)
         
-        '•\¦‚·‚é•¶š—ñ
+        'è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
         ret = CStr(category_id) & ";"
         ret = ret & DLookup("category_id", "category", "category_id=" & parent_id) & ";"
         ret = ret & DLookup("category_id", "category", "category_id=" & parent_id_above) & ";"
@@ -104,20 +104,20 @@ End Function
 
 Public Function category_id_one(category_id As Integer) As Integer
 '
-' ƒJƒeƒSƒŠid‚æ‚èA‘æˆêŠK‘w‚¾‚¯•Ô‚·(ƒ[ƒ‹‚·‚é‘ÎÛ‚Æ‚È‚é‚Ì‚Å)
+' ã‚«ãƒ†ã‚´ãƒªidã‚ˆã‚Šã€ç¬¬ä¸€éšå±¤ã ã‘è¿”ã™(ãƒ¡ãƒ¼ãƒ«ã™ã‚‹å¯¾è±¡ã¨ãªã‚‹ã®ã§)
 '
 
 End Function
 Public Function category_name_view(category_id As Integer) As String
 '
-' •\¦—p (ƒJƒeƒSƒŠ‚²‚Æ‚ÉAƒXƒy[ƒX‚ğ4‚Â’Ç‰Á‚·‚é)
+' è¡¨ç¤ºç”¨ (ã‚«ãƒ†ã‚´ãƒªã”ã¨ã«ã€ã‚¹ãƒšãƒ¼ã‚¹ã‚’4ã¤è¿½åŠ ã™ã‚‹)
 '
     
 '
 ' ?fnc_category.category_name_view(22)
 '
     Select Case DLookup("category", "category ", "category_id=" & category_id)
-    Case 0 '‘S‚Ä
+    Case 0 'å…¨ã¦
         ret_category_name = DLookup("categoryname", "category", "category_id=" & category_id)
     Case 1
         ret_category_name = DLookup("categoryname", "category", "category_id=" & category_id)

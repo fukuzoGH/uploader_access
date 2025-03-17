@@ -3,7 +3,7 @@ Option Compare Database
 
 Public Function SHA256Hash(ByVal inputString As String) As String
 '
-' ƒnƒbƒVƒ…’l‚ğ‹‚ß‚é (•¡G‚ÅA”äŠr“IˆÀ‘S)
+' ãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã‚‹ (è¤‡é›‘ã§ã€æ¯”è¼ƒçš„å®‰å…¨)
 '
 ' SHA-256
 '
@@ -27,12 +27,12 @@ End Function
 
 Public Function category_list_user(user_id As Integer)
 '
-'ƒ†[ƒU–ˆ‚ÌƒJƒeƒSƒŠ[id‚ğ€”õ (ƒ^ƒCƒ~ƒ“ƒO:ƒƒOƒCƒ“)
+'ãƒ¦ãƒ¼ã‚¶æ¯ã®ã‚«ãƒ†ã‚´ãƒªãƒ¼idã‚’æº–å‚™ (ã‚¿ã‚¤ãƒŸãƒ³ã‚°:ãƒ­ã‚°ã‚¤ãƒ³æ™‚)
 '
 
 '
-' ?fnc_user.category_list_user(2)  'ƒJƒeƒSƒŠ[:15:A
-' ?fnc_user.category_list_user(1)  'ƒJƒeƒSƒŠ[:27:(‚·‚×‚Ä)
+' ?fnc_user.category_list_user(2)  'ã‚«ãƒ†ã‚´ãƒªãƒ¼:15:A
+' ?fnc_user.category_list_user(1)  'ã‚«ãƒ†ã‚´ãƒªãƒ¼:27:(ã™ã¹ã¦)
 '
 
 Dim categoryList As New Collection
@@ -67,7 +67,7 @@ ca2.Close
 
 Dim ca3 As DAO.Recordset
 For Each item2 In categoryList2
-    If IsEmpty(item2) = False Then '‰½‚àƒJƒeƒSƒŠ‚ª–³‚¢ê‡‚à‚ ‚é‚Ì‚Å
+    If IsEmpty(item2) = False Then 'ä½•ã‚‚ã‚«ãƒ†ã‚´ãƒªãŒç„¡ã„å ´åˆã‚‚ã‚ã‚‹ã®ã§
         Set ca3 = CurrentDb.OpenRecordset("SELECT * FROM category WHERE parent_id=" & item2)
         Do Until ca3.EOF
             categoryList3.Add ca3.Fields("category_id").value

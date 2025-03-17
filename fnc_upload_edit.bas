@@ -3,11 +3,11 @@ Option Compare Database
 
 Public Function categoryCnt(srtValue As String) As Integer
 '
-' •¶š—ñ;‚ğƒJƒEƒ“ƒg‚µ‚Ä‰½ŒÂ‚©
+' æ–‡å­—åˆ—;ã‚’ã‚«ã‚¦ãƒ³ãƒˆã—ã¦ä½•å€‹ã‹
 '
 
 '
-' ?fnc_upload_edit.categoryCnt("‰½‚à‚È‚¢")  ':0
+' ?fnc_upload_edit.categoryCnt("ä½•ã‚‚ãªã„")  ':0
 ' ?fnc_upload_edit.categoryCnt("")          ':0
 ' ?fnc_upload_edit.categoryCnt("A;")        ':1
 ' ?fnc_upload_edit.categoryCnt("A;B;C;")    ':3
@@ -18,7 +18,7 @@ Public Function categoryCnt(srtValue As String) As Integer
 End Function
 Public Function GetLeftPart(str As String) As String
 '
-' •¶š—ñ; ‚ÅA¶•Ó‚¾‚¯‚ğæ‚èo‚·
+' æ–‡å­—åˆ—; ã§ã€å·¦è¾ºã ã‘ã‚’å–ã‚Šå‡ºã™
 '
 
 '
@@ -37,7 +37,7 @@ Public Function GetLeftPart(str As String) As String
 End Function
 Function GetMiddleElement(str As String) As String
 '
-' •¶š—ñ; ‚ÅA’†‰›‚¾‚¯‚ğæ‚èo‚·
+' æ–‡å­—åˆ—; ã§ã€ä¸­å¤®ã ã‘ã‚’å–ã‚Šå‡ºã™
 '
 
 '
@@ -65,7 +65,7 @@ Function GetMiddleElement(str As String) As String
 End Function
 Function GetRightPart(str As String) As String
 '
-' •¶š—ñ; ‚ÅA‰E•Ó‚¾‚¯‚ğæ‚èo‚·
+' æ–‡å­—åˆ—; ã§ã€å³è¾ºã ã‘ã‚’å–ã‚Šå‡ºã™
 '
 
 '
@@ -79,8 +79,8 @@ Function GetRightPart(str As String) As String
     If categoryCnt(str) < 2 Then Exit Function
     
     Dim target  As String: target = ""
-    If Mid(str, Len(str), 1) = ";" Then 'ÅŒã‚Ì•¶š—ñ‚É;‚ª‚ ‚é‚Æ‚«
-        target = Left(str, Len(str) - 1) ';‚ğ‚Ì‚¼‚­
+    If Mid(str, Len(str), 1) = ";" Then 'æœ€å¾Œã®æ–‡å­—åˆ—ã«;ãŒã‚ã‚‹ã¨ã
+        target = Left(str, Len(str) - 1) ';ã‚’ã®ãã
     End If
 
     Dim ret As String: ret = ""

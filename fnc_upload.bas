@@ -3,16 +3,16 @@ Option Compare Database
 
 Public Function url_hash(TextValue As String) As String
 '
-' ?fnc_upload.url_hash("İŒv‘.pdf")
-' ?fnc_upload.url_hash("}–Ê1.pdf")
-' ?fnc_upload.url_hash("İŒv‘2.pdf")
+' ?fnc_upload.url_hash("è¨­è¨ˆæ›¸.pdf")
+' ?fnc_upload.url_hash("å›³é¢1.pdf")
+' ?fnc_upload.url_hash("è¨­è¨ˆæ›¸2.pdf")
 ' ?fnc_upload.url_hash("test")
-' ?fnc_upload.url_hash("İŒv‘2.pdf")
+' ?fnc_upload.url_hash("è¨­è¨ˆæ›¸2.pdf")
 '
 '
 '
 
-'ƒtƒ@ƒCƒ‹‚ÌƒnƒbƒVƒ…’l‚ğ‹‚ß‚é
+'ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã‚‹
     'url_hash = MD5Hash(TextValue)
     url_hash = SHA256Hash(TextValue)
 
@@ -21,7 +21,7 @@ End Function
 
 Private Function MD5Hash(ByVal sText As String) As String
 '
-' ƒnƒbƒVƒ…’l‚ğ‹‚ß‚é
+' ãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã‚‹
 '
 ' MD5
 '
@@ -44,7 +44,7 @@ Private Function MD5Hash(ByVal sText As String) As String
 End Function
 Private Function SHA256Hash(ByVal inputString As String) As String
 '
-' ƒnƒbƒVƒ…’l‚ğ‹‚ß‚é (•¡G‚ÅA”äŠr“IˆÀ‘S)
+' ãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã‚‹ (è¤‡é›‘ã§ã€æ¯”è¼ƒçš„å®‰å…¨)
 '
 ' SHA-256
 '
@@ -67,7 +67,7 @@ Private Function SHA256Hash(ByVal inputString As String) As String
 End Function
 Function RandomHash() As String
 '
-' ƒ‰ƒ“ƒ_ƒ€‚ÈƒnƒbƒVƒ…
+' ãƒ©ãƒ³ãƒ€ãƒ ãªãƒãƒƒã‚·ãƒ¥
 '
     Dim i As Integer
     Dim randomBytes(0 To 31) As Byte
