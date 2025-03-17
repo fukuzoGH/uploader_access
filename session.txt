@@ -1,0 +1,7 @@
+CREATE TABLE session
+(
+    session_id  INT,  -- AUTO Num , PrimaryKey
+    session_name VARCHAR(255),
+    session_value VARCHAR(255),
+    session_memo VARCHAR(255)
+)
